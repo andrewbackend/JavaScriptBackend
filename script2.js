@@ -57,7 +57,27 @@ document.getElementById('filterSort').addEventListener('click', () => {
     console.log(filteredSortProducts);
 });
 
+let datatext = [];
+//document.getElementById('showtask').innerHTML = '';
+//1. Crea un formulario donde los usuarios puedan agregar tareas. Cuando se agrega una tarea, genera dinámicamente una lista de tareas (<ul>). Usa un evento click y una función de flecha para ordenar las tareas alfabéticamente cada vez que se agrega una nueva tarea. (JAMES)
 
+document.getElementById('addtask_buton').addEventListener('click', () => {
+    
+    const value_text = document.getElementById('addtask_txt').value;
+    const div = document.getElementById('showtask');
+    let cadena = '';
+    document.getElementById('showtask').innerHTML = '';
+    datatext.push(value_text);
+    datatext.sort();
+    console.log(datatext);
+    cadena += '<ul>';
+    for (i = 0; i < datatext.length; i++) {
+        console.log(datatext[i]);
+        cadena = cadena+' '+'<li>'+ datatext[i] + '</li>';   
+    }
+    cadena +='</ul>';
+    div.insertAdjacentHTML('beforeend', cadena);
+});
 
 
  /*
